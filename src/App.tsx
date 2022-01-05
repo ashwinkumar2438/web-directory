@@ -1,7 +1,8 @@
-import { FolderView } from './components';
+import { FolderView, FolderHead, Popup } from './components';
 // icons and styles
 import './App.scss';
 
+const FolderPopup = Popup( FolderView, FolderHead ) ;
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
           <h1>Web Directory</h1>
       </header>
       <main>
-        <FolderView />
+        <FolderPopup state = { true } toggleState={ ( state: boolean ) => null } />
       </main>
       <footer>
         made by Ashwin with &hearts;

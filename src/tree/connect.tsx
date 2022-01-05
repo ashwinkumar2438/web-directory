@@ -1,14 +1,14 @@
 import { Component } from "react";
 import getPointer from './pointer';
+import type { ReactComponent } from '../types/component';
 
-type ReactComponent =  ( typeof Component ) | ( ( ...args:any[] ) => JSX.Element )
 
 const filePointer = getPointer() ;
 
 const Connect = ( ChildComponent: ReactComponent ) => {
 
 
-    return class Wrapper extends Component{
+    return class Wrapper extends Component< any >{
         unobserve: ( ...args:any[] ) => void ;
 
         constructor( props:any ){
@@ -30,7 +30,7 @@ const Connect = ( ChildComponent: ReactComponent ) => {
         }
 
         render(){
-            return <ChildComponent filePointer = { filePointer } />
+            return <ChildComponent filePointer = { filePointer } { ...this.props } />
         }
     }
 
