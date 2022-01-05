@@ -1,0 +1,22 @@
+@import 'variables';
+.menu-popup{
+    width: max-content ;
+    padding: 0.2rem;
+    border: 1px solid $stroke-clr;
+    border-radius: 5px;
+
+    .menu{
+        @include flex( $flow: column nowrap, $justify: stretch, $align: stretch );
+        row-gap: 0.2rem;
+        button{
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+            &:hover{
+                background-color: $secondary-clr;
+            }
+        }
+    }
+}
+

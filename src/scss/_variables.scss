@@ -1,0 +1,19 @@
+//variables: 
+$secondary-clr: #EADEDE;
+$stroke-clr: #533535;
+
+
+//mixins:
+@mixin flex( $flow: row nowrap, $justify: center, $align: center ){
+    display: flex;
+    flex-flow: $flow;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin position( $top: 50%, $left: 50%, $transform: translate( -50%, -50% ) ){
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: $transform;
+}
